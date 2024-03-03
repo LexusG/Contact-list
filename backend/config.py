@@ -11,7 +11,7 @@ CORS(app)
 
 # Configuration settings for the SQLAlchemy database
 # Setting the path to the SQLite database file
-app.config["SQLALCHEMY_DATABASE_URL"] = "sqllite:///database.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 # Disabling modification tracking to reduce overhead
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
