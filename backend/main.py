@@ -44,7 +44,47 @@ def create_contact():
     # Returning a success response
     return jsonify({"message": "User Created!"}), 201
 
+# Defining a route for handling PATCH requests to "/update_contact/<int:user_id>"
+@app.route("/update_contact/<int:user_id>", methods=["PATCH"])
+def update_contact(user_id):
+    # Querying the contact with the given user_id
+    contact = Contact.query.get(user_id)
+    
+     # Checking if the contact exists
+    if not contact:
+        return jsonifiy({"message": "User not found"}), 404
+    
+    # Retrieving data from the request JSON payload
+    data = request.json
+    # Updating contact fields if provided in the request
+    contact.first_name = data.get("firstName", contact.first_name)
+    contact.last_name = data.get("lastName", contact.last_name)
+    contact.email = data.get("email", contact.email)
+    
+    # Committing the changes to the database
+    db.session.commit()
+    
+    # Returning a success response
+    return jsonify({"message": "User Updated!."}), 200
 
+# Defining a route for handling DELETE requests to "/delete_contact/<int:user_id>"
+@app.route("/delete_contact/<int:user_id>", methods=["DELETE"])
+def delete_contact(user_id):
+    # Querying the contact with the given user_id
+    contact = Contact.query.get(user_id)
+    
+    # Checking if the contact exists
+    if not contact:
+        return jsonify({"message": "User not found"}, 404)
+    
+    # Deleting the contact from the database session and committing the changes
+    db.session.delete(contact)
+    db.session.commit()
+    
+    # Returning a success response
+    return jsonify({"message": "User Deleted!"}), 200
+    
+    
 # Running the Flask app
 if __name__ == "__main__":
     # Creating all database tables within the app context
