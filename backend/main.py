@@ -52,7 +52,7 @@ def update_contact(user_id):
     
      # Checking if the contact exists
     if not contact:
-        return jsonifiy({"message": "User not found"}), 404
+        return jsonify({"message": "User not found"}), 404
     
     # Retrieving data from the request JSON payload
     data = request.json
