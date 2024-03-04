@@ -31,5 +31,5 @@ This project is a simple Contact Management System built using Flask for the bac
 
 1. **Clone the repository**
 ```bash
-git clone https:https://github.com/LexusG/Contact-list
+git clone https://github.com/LexusG/Contact-list
 cd your-repository-directory
