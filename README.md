@@ -1,7 +1,7 @@
 # Cont# Contact Management System
 
 ## Overview
-This project is a simple Contact Management System built using Flask for the backend and React for the frontend. It allows users to create, read, update, and delete contact information, including first name, last name, and email address.
+This project is a simple Contact Management System built using Flask for the backend and React for the frontend. It allows users to create, read, update, and delete (CRUD) contact information, including first name, last name, and email address.
 
 ## Features
 - **List Contacts**: View a list of all contacts in the database.
