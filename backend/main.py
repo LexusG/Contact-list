@@ -18,7 +18,7 @@ def get_contacts():
     return jsonify({"contacts": json_contacts})
 
 # Defining a route for handling POST requests to "/contacts"
-@app.route("/contacts", methods=["POST"])
+@app.route("/create_contact", methods=["POST"])
 def create_contact():
     # Retrieving data from the request JSON payload
     first_name = request.json.get("firstName")
